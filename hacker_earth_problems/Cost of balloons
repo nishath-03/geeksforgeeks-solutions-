@@ -1,0 +1,27 @@
+
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[]) throws Exception {
+        Scanner in = new Scanner(System.in);
+        if (!in.hasNextInt()) return;
+        
+        int t = in.nextInt();
+        while (t-- > 0) {
+            int cost1 = in.nextInt();
+            int cost2 = in.nextInt();
+            
+            int n = in.nextInt();
+            int p1Solved = 0;
+            int p2Solved = 0;
+            
+            for (int i = 0; i < n; i++) {
+                if (in.nextInt() == 1) p1Solved++;
+                if (in.nextInt() == 1) p2Solved++;
+            }
+            int option1 = (p1Solved * cost1) + (p2Solved * cost2);
+            int option2 = (p1Solved * cost2) + (p2Solved * cost1);
+            System.out.println(Math.min(option1, option2));
+        }
+    }
+}
