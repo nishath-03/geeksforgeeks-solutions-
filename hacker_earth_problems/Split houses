@@ -1,0 +1,19 @@
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[]) throws Exception {
+        Scanner in = new Scanner(System.in);
+        
+        if (!in.hasNextInt()) return;
+        int n = in.nextInt();
+        in.nextLine();
+        String s = in.nextLine();
+        
+        if (s.contains("HH")) {
+            System.out.println("NO");
+        } else {
+            System.out.println("YES");
+            System.out.println(s.replace('.', 'B'));
+        }
+    }
+}
