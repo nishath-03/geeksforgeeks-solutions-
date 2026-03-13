@@ -1,0 +1,38 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+    Scanner in = new Scanner(System.in);
+    if (!in.hasNextInt()) return;
+    int t = in.nextInt();
+    if(t<=0) return;
+    
+    while(t-- > 0){
+        if (!in.hasNextInt()) break;
+        int n = in.nextInt();
+        List<Integer> eve_ls = new ArrayList<>();
+        List<Integer> odd_ls = new ArrayList<>();
+    for(int i=0;i<n;i++){
+        
+        int val = in.nextInt();
+        if((Integer.bitCount(val))%2==0){
+            eve_ls.add(val);
+        }
+        else{
+            odd_ls.add(val);
+        }
+    }
+    Collections.sort(eve_ls); Collections.sort(odd_ls);
+    for(int i:eve_ls){
+    
+        System.out.print(i+" ");
+    }
+    for(int i:odd_ls){
+        
+        System.out.print(i+" ");
+    }System.out.println();
+
+    }
+    }
+}
